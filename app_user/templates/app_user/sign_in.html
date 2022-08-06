@@ -1,0 +1,36 @@
+{% extends 'app_user/auth_base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<body>
+    <section class="position-relative primary-bg">
+        <div class="container">
+            <div class="row d-flex justify-content-center vh-100">
+                <div class="col-md-6 col-xl-5 d-flex justify-content-center align-items-center">
+                    <div class="card w-100 custom-radius">
+                        <div class="card-body d-flex flex-column align-items-center my-sm-5">
+                            <h2 class="fw-600 fs-32">Login</h2>
+                            
+                            <p class="w-lg-50 secondary-text fw-400 fs-16">Enter your details to log in</p>
+                            {% if messages %}
+                                {% for message in messages %}
+                            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 8px 8px; margin: 28px; width: 94%; height: 40px; background: #FFE7EA; border-radius: 5px;"><p style="text-align: center; padding-top: 15px">{{ message }}</p></div>
+                                    {% endfor %}
+                                {% endif %}
+                            <form class="w-100 px-3" method="post">
+                                {% csrf_token %}
+                                <div class="mb-3"><label class="form-label fw-600 fs-12" for="email">Email</label><input class="form-control" type="email" name="username" placeholder="example@email.com" required=""></div>
+                                <div class="mb-3"><label class="form-label fw-600 fs-12" for="password">Password</label><input class="form-control" type="password" name="password" placeholder="Enter password"></div><a class="primary-text text-decoration-none fs-14 fw-600" href="fgt_pwd.html">Forgot Password?</a>
+                                <br><br><br>
+                                <button class="btn btn-dark d-block w-100" class="mb-3 mt-5" type="submit">Login</button>
+                                <p style="margin-top: 20px" class="text-center secondary-text fw-400 fs-14">Don’t have an account?&nbsp;<a class="text-decoration-none primary-text fw-600" href="{% url 'app_user:sign_up' %}">Register</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

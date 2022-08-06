@@ -1,0 +1,37 @@
+{% extends 'app_user/auth_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body class="vh-100">
+    {% include 'app_user/header.html' %}
+    <div class="container d-flex align-items-xl-center h-100">
+        <div class="my-5">
+            <h1 class="text-center fw-700 fs-40">Order a card</h1>
+            <div class="row mt-5">
+                <div class="col-lg-6 px-5 mb-5">
+                    <div class="card py-5 px-3 custom-radius">
+                        <div class="card-body">
+                            <h4 class="card-title fw-600">Individual</h4>
+                            <p class="card-text mb-5">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><a class="btn btn-dark" role="button" href="/order/">Proceed<svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="ms-2 fs-16">
+                                    <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                    <path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 px-5 mb-5">
+                    <div class="card py-5 px-3 custom-radius">
+                        <div class="card-body">
+                            <h4 class="card-title fw-600">Company<span class="float-end fs-14 fw-400 coming-soon py-2 px-3 custom-radius"><strong>Coming Soon</strong><br></span><br></h4>
+                            <p class="card-text mb-5">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-dark disabled" type="button" disabled="">Proceed<svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="ms-2 fs-16">
+                                    <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                                    <path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"></path>
+                                </svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

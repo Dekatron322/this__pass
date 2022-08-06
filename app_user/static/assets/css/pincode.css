@@ -1,0 +1,19 @@
+.pin-code {
+  padding: 0; margin: 0 auto; display: flex; justify-content: center;
+}
+
+.pin-code input {
+  border: none; text-align: center; width: 150px; height: 50px;font-size: 36px;background-color: #FFFFFF;border: 1px solid #E8E8E8;margin-right: 15px;
+  border-radius: 5px;
+}
+
+.pin-code input:focus {
+  border: 1px solid #0F0F0F;
+  outline: none;
+}
+
+.pin-code input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+

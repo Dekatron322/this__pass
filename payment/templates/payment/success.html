@@ -1,0 +1,25 @@
+{% extends 'app_user/auth_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body class="vh-100">
+    {% include 'app_user/header.html' %}
+    <div class="container d-flex align-items-xl-center h-100">
+        <div class="my-12">
+            <h1 class="text-center fw-700 fs-40">You're done,</h1>
+            <div class="row mt-5s">
+                <div class="col-lg-12 px-5 mb-5">
+                    <div class="card py-5 px-3 custom-radius">
+                        <div class="card-body">
+                            <p class="card-text mb-5">Congratulations</p>
+                            <a href="{% url 'app_user:dashboard' %}">Back Home</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

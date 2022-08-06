@@ -1,0 +1,98 @@
+{% load static %}
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-1">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title fw-700 fs-20">Edit Primary Information</h5><button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <form class="w-100" method="post">
+                    {% csrf_token %}
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>First Name</strong></label><input class="form-control" type="text"  placeholder="John" name="card_first_name" value="{{ app_user.card_first_name}}"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>Last Name</strong></label><input class="form-control" type="text" name="card_last_name" placeholder="Doe" value="{{ app_user.card_last_name}}"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="email">Email</label><input class="form-control" type="email" name="card_email" placeholder="example@email.com" value="{{ app_user.card_email }}" required=""></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="card_email">Phone Number</label><input class="form-control" type="tel" placeholder="+234"  maxlength="14" minlength="11" value="{{ app_user.card_phone_no }}" name="card_phone_no"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="website">Website</label><input class="form-control" type="url" placeholder="www.example.com" name="card_website" value="{{ app_user.card_website }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="company-name"><strong>Company Name</strong></label><input class="form-control" type="text" placeholder="Enter Company Name" name="card_company" value="{{ app_user.card_company }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="job-title"><strong>Job Title</strong><br></label><input class="form-control" type="text" placeholder="Enter Job Title" name="card_job_title" value="{{ app_user.card_job_title }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="street"><strong>Street Address</strong><br></label><input class="form-control" type="text" placeholder="123 Silicon Street" name="card_address" value="{{ app_user.card_address }}"></div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>City</strong><br></label><input class="form-control" type="text" name="card_city" placeholder="Ikeja" value="{{ app_user.card_city }}"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>State</strong><br></label><input class="form-control" type="text" name="card_state" placeholder="Lagos" value="{{ app_user.card_state }}"></div>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="zip">Zip</label><input class="form-control" type="number" name="card_zip_code" placeholder="00000" value="{{ app_user.card_zip_code }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="country"><strong>Country</strong><br></label><input class="form-control" type="text" placeholder="Nigeria" name="card_country" value="{{ app_user.card_country }}"></div>
+
+                    <div style="display: none;" class="mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-5 me-2" style="color: #1877F2;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+                        </svg><label class="form-label fw-600 fs-12" for="facebook"><strong>Facebook</strong><br></label><input class="form-control" type="url" placeholder="eg. www.facebook.com/page" name="facebook_link" value="{{ app_user.facebook_link }}"></div>
+                    <div style="display: none;" class="mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-5 me-2" style="color: #1D9BF0;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                        </svg><label class="form-label fw-600 fs-12" for="twitter">Twitter</label><input class="form-control" type="url" placeholder="eg. www.twitter.com/page" name="twitter_link" value="{{ app_user.twitter_link }}"></div>
+                    <div style="display: none;" class="mb-3"><i class="fab fa-instagram ig-logo me-2 fs-5 fw-700" aria-hidden="true"></i><label class="form-label fw-600 fs-12" for="instagram"><strong>Instagram</strong></label><input class="form-control" type="url" placeholder="eg. www.instagram.com/username" name="instagram_link" value="{{ app_user.instagram_link }}"></div>
+                    <div  style="display: none;" class="mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-5 me-2" style="color: #0a66c2;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
+                        </svg><label class="form-label fw-600 fs-12" for="linkedin"><strong>LinkedIn</strong></label><input class="form-control" type="url" placeholder="eg. www.linkedin.com/username" name="linkedin_link" value="{{ app_user.linkedin_link }}"></div>
+                    <div class="mb-3 mt-5"><button class="btn btn-dark d-block w-100 nxt__btn" type="submit">Save</button></div>
+                </form>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-2">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title fw-700 fs-20">Edit Social Media</h5><button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+<div class="offcanvas-body">
+                <form class="w-100" method="post">
+                    {% csrf_token %}
+
+                    <div class="row mb-3" style="display: none;">
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>First Name</strong></label><input class="form-control" type="text"  placeholder="John" name="card_first_name" value="{{ app_user.card_first_name}}"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>Last Name</strong></label><input class="form-control" type="text" name="card_last_name" placeholder="Doe" value="{{ app_user.card_last_name}}"></div>
+                        </div>
+                    </div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="email">Email</label><input class="form-control" type="email" name="card_email" placeholder="example@email.com" value="{{ app_user.card_email }}" required=""></div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="email">Phone Number</label><input class="form-control" type="tel" placeholder="+234"  maxlength="14" minlength="11" value="{{ app_user.card_phone_no }}" name="card_phone_no"></div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="website">Website</label><input class="form-control" type="url" placeholder="www.example.com" name="card_website" value="{{ app_user.website }}"></div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="company-name"><strong>Company Name</strong></label><input class="form-control" type="text" placeholder="Enter Company Name" name="card_company" value="{{ app_user.agency_name }}"></div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="job-title"><strong>Job Title</strong><br></label><input class="form-control" type="text" placeholder="Enter Job Title" name="card_job_title" value="{{ app_user.job_title }}"></div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="street"><strong>Street Address</strong><br></label><input class="form-control" type="text" placeholder="123 Silicon Street" name="card_address" value="{{ app_user.address }}"></div>
+                    <div style="display: none;" class="row mb-3">
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>City</strong><br></label><input class="form-control" type="text" name="card_city" placeholder="Ikeja" value="{{ app_user.city }}"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>State</strong><br></label><input class="form-control" type="text" name="card_state" placeholder="Lagos" value="{{ app_user.state }}"></div>
+                        </div>
+                    </div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="zip">Zip</label><input class="form-control" type="number" name="card_zip_code" placeholder="00000" value="{{ app_user.zip_code }}"></div>
+                    <div style="display: none;" class="mb-3"><label class="form-label fw-600 fs-12" for="country"><strong>Country</strong><br></label><input class="form-control" type="text" placeholder="Nigeria" name="card_country" value="{{ app_user.country }}"></div>
+                    <div class="mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-5 me-2" style="color: #1877F2;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+                        </svg><label class="form-label fw-600 fs-12" for="facebook"><strong>Facebook</strong><br></label><input class="form-control" type="url" placeholder="eg. www.facebook.com/page" name="facebook_link" value="{{ app_user.facebook_link }}"></div>
+                    <div class="mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-5 me-2" style="color: #1D9BF0;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                        </svg><label class="form-label fw-600 fs-12" for="twitter">Twitter</label><input class="form-control" type="url" placeholder="eg. www.twitter.com/page" name="twitter_link" value="{{ app_user.twitter_link }}"></div>
+                    <div class="mb-3"><i class="fab fa-instagram ig-logo me-2 fs-5 fw-700" aria-hidden="true"></i><label class="form-label fw-600 fs-12" for="instagram"><strong>Instagram</strong></label><input class="form-control" type="url" placeholder="eg. www.instagram.com/username" name="instagram_link" value="{{ app_user.instagram_link }}"></div>
+                    <div class="mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-5 me-2" style="color: #0a66c2;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
+                        </svg><label class="form-label fw-600 fs-12" for="linkedin"><strong>LinkedIn</strong></label><input class="form-control" type="url" placeholder="eg. www.linkedin.com/username" name="linkedin_link" value="{{ app_user.linkedin_link }}"></div>
+                    <div class="mb-3 mt-5"><button class="btn btn-dark d-block w-100 nxt__btn" type="submit">Save</button></div>
+                </form>
+            </div>

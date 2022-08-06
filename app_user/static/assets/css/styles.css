@@ -1,0 +1,160 @@
+.primary-bg {
+  background-color: #0A0A0A;
+}
+
+.primary-text {
+  color: #0A0A0A!important;
+}
+
+div {
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+.secondary-bg {
+  background-color: #757575;
+}
+
+.secondary-text {
+  color: #757575;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.custom-radius {
+  border-radius: 10px !important;
+}
+
+.dashboard-nav-img {
+  width: 63px;
+  height: 63px;
+  background-color: #FAFAFA;
+  border: 1px solid #F2F2F2;
+}
+
+.color-disabled {
+  color: #D3D8DF;
+}
+
+.dashboard-dropdown .dropdown-toggle::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>');
+  border: none;
+  width: 10px;
+  height: auto;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.coming-soon {
+  background-color: #FFF1E4;
+  color: #0F0F0F;
+}
+
+.ig-logo {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.active_form {
+  display: none;
+}
+
+.card-selector:hover {
+  border: 2px solid #0f0f0f;
+}
+
+.card-selector {
+  padding: 5px;
+  width: 55px;
+  height: 55px;
+}
+
+#white-card {
+}
+
+#grey-card {
+  background-image: linear-gradient(#a1a1a1, #737373);
+}
+
+.card-clicked {
+  border-radius: 50px;
+  border: 2px solid #020202;
+}
+
+.control {
+  flex-direction: row;
+  gap: 8px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.control button {
+  width: 32px;
+  height: 32px;
+  background: #F2F2F2;
+  border-radius: 20px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.control button svg {
+  color: #757575;
+}
+
+.control input {
+  outline: none;
+  user-select: none;
+  width: 40px;
+  border: 1px solid #E8E8E8;
+  border-radius: 4px;
+}
+
+.control input::-webkit-inner-spin-button, .control input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.control input[type=number] {
+  -moz-appearance: textfield;
+}
+

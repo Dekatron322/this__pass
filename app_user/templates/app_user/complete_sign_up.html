@@ -1,0 +1,40 @@
+{% extends 'app_user/auth_base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+    <section class="position-relative primary-bg">
+        <div class="container">
+            <div class="row d-flex justify-content-center vh-100">
+                <div class="col-md-6 col-xl-5 d-flex justify-content-center align-items-center">
+                    <div class="card w-100 custom-radius">
+                        <div class="card-body d-flex flex-column align-items-center my-sm-5">
+                            <h2 class="fw-600 fs-32"><strong>Verify your Email</strong><br></h2>
+                            {% if messages %}
+                                {% for message in messages %}
+                            <p class="w-lg-50 secondary-text fw-400 fs-14">{{message}}</p>
+                                {% endfor %}
+                            {% else %}
+
+                            <p class="w-lg-50 secondary-text fw-400 fs-14">Enter the verification code that was sent to your mail.</p>
+                            {% endif %}
+                            <form class="w-100 px-3" method="post">
+                                {% csrf_token %}
+                                <div class="my-3">   <div style="width: 100px !important; padding: 0; margin: 0 auto; display: flex; justify-content: center; ">
+                                    <input style="border: none; text-align: center; width: 150px; height: 50px;font-size: 36px;background-color: #FFFFFF;border: 1px solid #E8E8E8;margin-right: 15px;border-radius: 5px;" class="form-control" name="otp" type="text" >
+                                    
+                                </div>
+                            </div>
+
+                                <div class="mb-3 mt-4"><button class="btn btn-dark d-block w-100" type="submit">Submit</button></div>
+                                <p class="text-center mt-4"><a class="text-decoration-none primary-text fw-600 fs-14" href="#">Resend Code</a></p>
+                                <p class="text-center secondary-text fw-400 fs-14">Already have an account?&nbsp;<a class="text-decoration-none primary-text fw-600" href="{% url 'app_user:sign_in' %}">Login</a></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
