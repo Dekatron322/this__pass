@@ -8,28 +8,28 @@
                     {% csrf_token %}
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <div><label class="form-label fw-600 fs-12" for="email"><strong>First Name</strong></label><input class="form-control" type="text"  placeholder="John" name="card_first_name" value="{{ app_user.card_first_name}}"></div>
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>First Name</strong></label><input class="form-control" type="text"  placeholder="{{ card.card_first_name }}" name="card_first_name" value="{{ card.card_first_name }}"></div>
                         </div>
                         <div class="col-md-6">
-                            <div><label class="form-label fw-600 fs-12" for="email"><strong>Last Name</strong></label><input class="form-control" type="text" name="card_last_name" placeholder="Doe" value="{{ app_user.card_last_name}}"></div>
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>Last Name</strong></label><input class="form-control" type="text" name="card_last_name" placeholder="Doe" value="{{ card.card_last_name}}"></div>
                         </div>
                     </div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="email">Email</label><input class="form-control" type="email" name="card_email" placeholder="example@email.com" value="{{ app_user.card_email }}" required=""></div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="card_email">Phone Number</label><input class="form-control" type="tel" placeholder="+234"  maxlength="14" minlength="11" value="{{ app_user.card_phone_no }}" name="card_phone_no"></div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="website">Website</label><input class="form-control" type="url" placeholder="www.example.com" name="card_website" value="{{ app_user.card_website }}"></div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="company-name"><strong>Company Name</strong></label><input class="form-control" type="text" placeholder="Enter Company Name" name="card_company" value="{{ app_user.card_company }}"></div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="job-title"><strong>Job Title</strong><br></label><input class="form-control" type="text" placeholder="Enter Job Title" name="card_job_title" value="{{ app_user.card_job_title }}"></div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="street"><strong>Street Address</strong><br></label><input class="form-control" type="text" placeholder="123 Silicon Street" name="card_address" value="{{ app_user.card_address }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="email">Email</label><input class="form-control" type="email" name="card_email" placeholder="example@email.com" value="{{ card.card_email }}" ></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="card_email">Phone Number</label><input class="form-control" type="tel" placeholder="+234"  maxlength="14" minlength="11" value="{{ card.card_phone_no }}" name="card_phone_no"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="website">Website</label><input class="form-control" type="url" placeholder="www.example.com" name="card_website" value="{{ card.card_website }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="company-name"><strong>Company Name</strong></label><input class="form-control" type="text" placeholder="Enter Company Name" name="card_company" value="{{ card.card_company }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="job-title"><strong>Job Title</strong><br></label><input class="form-control" type="text" placeholder="Enter Job Title" name="card_job_title" value="{{ card.card_job_title }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="street"><strong>Street Address</strong><br></label><input class="form-control" type="text" placeholder="123 Silicon Street" name="card_address" value="{{ card.card_address }}"></div>
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <div><label class="form-label fw-600 fs-12" for="email"><strong>City</strong><br></label><input class="form-control" type="text" name="card_city" placeholder="Ikeja" value="{{ app_user.card_city }}"></div>
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>City</strong><br></label><input class="form-control" type="text" name="card_city" placeholder="Ikeja" value="{{ card.card_city }}"></div>
                         </div>
                         <div class="col-md-6">
-                            <div><label class="form-label fw-600 fs-12" for="email"><strong>State</strong><br></label><input class="form-control" type="text" name="card_state" placeholder="Lagos" value="{{ app_user.card_state }}"></div>
+                            <div><label class="form-label fw-600 fs-12" for="email"><strong>State</strong><br></label><input class="form-control" type="text" name="card_state" placeholder="Lagos" value="{{ card.card_state }}"></div>
                         </div>
                     </div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="zip">Zip</label><input class="form-control" type="number" name="card_zip_code" placeholder="00000" value="{{ app_user.card_zip_code }}"></div>
-                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="country"><strong>Country</strong><br></label><input class="form-control" type="text" placeholder="Nigeria" name="card_country" value="{{ app_user.card_country }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="zip">Zip</label><input class="form-control" type="number" name="card_zip_code" placeholder="00000" value="{{ card.card_zip_code }}"></div>
+                    <div class="mb-3"><label class="form-label fw-600 fs-12" for="country"><strong>Country</strong><br></label><input class="form-control" type="text" placeholder="Nigeria" name="card_country" value="{{ card.card_country }}"></div>
 
                     <div style="display: none;" class="mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-5 me-2" style="color: #1877F2;">
                             <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->

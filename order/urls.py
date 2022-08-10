@@ -7,11 +7,11 @@ urlpatterns = [
 
     path("", views.ShopCartView, name="shopcart"),
     path("shipping/", views.ShippingView, name="shipping"),
-    path("complete/", views.CompleteView, name="complete"),
+    path("complete/<int:id>/", views.CompleteView, name="complete"),
     path("update-profile/<int:order_id>/", views.UpdateAppuserView, name="update_appuser"),
 
-    path("dashboard/<int:order_id>/", views.DashboardView, name="dashboard"),
-    path("url-profile/", views.URLProfileView, name="url_profile"),
+    path("dashboard/<int:id>/", views.DashboardView, name="dashboard"),
+    path("1/<str:app_user>/", views.URLProfileView, name="profile"),
     path("confirm/", views.ConfirmView, name="confirm"),
 
 ]

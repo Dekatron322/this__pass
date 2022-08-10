@@ -74,12 +74,14 @@ def SignUpView(request):
 		first_name = request.POST.get("first_name")
 		last_name = request.POST.get("last_name")
 		phone_no = request.POST.get("phone_no")
+		user_name = request.POST.get('user_name')
 		#account_type = request.POST.get("account_type")
 
 
 		if request.POST.get("password2") != request.POST.get("password1"):
 			messages.warning(request, "Make sure both passwords match")
 			return HttpResponseRedirect(reverse("app_user:sign_up"))
+
 
 			
 		else:
@@ -102,6 +104,7 @@ def SignUpView(request):
 				user.email = email
 				user.save()
 				app_user.phone_no = phone_no
+				app_user.user_name = user_name
 				app_user.save()
 
 				if user:

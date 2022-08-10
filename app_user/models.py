@@ -7,7 +7,8 @@ from django.utils import timezone
 class AppUser(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
 	
-	phone_no = models.CharField(default=" ",max_length=100)
+	phone_no = models.CharField(default="", max_length=100)
+	user_name = models.CharField(default="", max_length=100)
 
 	pub_date = models.DateTimeField(default=timezone.now)
 

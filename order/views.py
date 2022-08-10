@@ -119,12 +119,13 @@ def ShippingView(request):
 			'form':'form',}
 		return render(request, "order/shipping.html", context )
 
-def CompleteView(request):
+def CompleteView(request, id):
 	app_user = AppUser.objects.get(user__pk=request.user.id)
 	if request.method == "POST":
 		pass
 	else:
-		context = {"app_user":app_user}
+		card = CardInfo.objects.get(id=id)
+		context = {"app_user":app_user, "card":card}
 		return render(request, "order/order_complete.html", context )
 
 def UpdateAppuserView(request, order_id):
@@ -206,11 +207,12 @@ def ConfirmView(request):
 		return render(request, "order/confirm_details.html", context )
 
 
-def DashboardView(request, order_id):
-	order = Order.objects.get(id=order_id)
+def DashboardView(request, id):
+	order = Order.objects.get(id=id)
+	card = CardInfo.objects.get(id=id)
 	app_user = AppUser.objects.get(user__pk=request.user.id)
 	if request.method == "POST":
-		
+		app_user = AppUser.objects.get(user__pk=request.user.id)
 		card_first_name = request.POST.get("card_first_name")
 		card_last_name = request.POST.get("card_last_name")
 		card_email = request.POST.get("card_email")
@@ -254,18 +256,18 @@ def DashboardView(request, order_id):
 		app_user.save()
 
 		
-		return HttpResponseRedirect(reverse("order:dashboard"))
+		return HttpResponseRedirect(reverse("order"))
 
 
 	else:
-		card = CardInfo.objects.all().order_by('-id')[:1]
+		
 
 		context = {"app_user": app_user, 'card':card, "order":order}
 		return render(request, "order/dashboard.html", context )
 
 
 
-def URLProfileView(request):
+def URLProfileView(request, app_user):
 	app_user = AppUser.objects.get(user__pk=request.user.id)
 	if request.method == "POST":
 		pass

@@ -85,7 +85,7 @@
                             </div>
                         </div>
                     </div>
-                    <div><a class="btn btn-dark d-block w-100" role="button" href="/order/complete/">Save</a></div>
+                    <div><a class="btn btn-dark d-block w-100" role="button" href="{% url 'order:complete' rs.id %}">Save</a></div>
                     {% endfor %}
                 </div>
             </div>
