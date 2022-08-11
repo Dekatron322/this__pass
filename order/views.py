@@ -256,7 +256,7 @@ def DashboardView(request, id):
 		card.save()
 
 		
-		return HttpResponseRedirect(reverse("order:dashboard"))
+		return HttpResponseRedirect(reverse("order:dashboard", args=[card.id]))
 
 
 	else:
