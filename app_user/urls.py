@@ -10,6 +10,6 @@ urlpatterns = [
 	path("sign-up/complete/", views.CompleteSignUpView, name="complete_sign_up"),
 	path("sign-out/", views.SignOutView, name="sign_out"),
 	path("verified/", views.VerifiedView, name="verified"),
-    path("", views.DashboardView, name="dashboard"),
+    path("app/", views.DashboardView, name="dashboard"),
 
 ]

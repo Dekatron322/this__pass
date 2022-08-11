@@ -208,7 +208,7 @@ def ConfirmView(request):
 
 
 def DashboardView(request, id):
-	order = Order.objects.get(id=id)
+	order = Order.objects.all()
 	card = CardInfo.objects.get(id=id)
 	app_user = AppUser.objects.get(user__pk=request.user.id)
 	if request.method == "POST":
@@ -233,30 +233,30 @@ def DashboardView(request, id):
 		linkedin_link = request.POST.get("linkedin_link")
 
 
-		app_user.card_first_name = card_first_name
-		app_user.card_last_name = card_last_name
+		card.card_first_name = card_first_name
+		card.card_last_name = card_last_name
 		
-		app_user.card_email = card_email
-		app_user.card_company = card_company
-		app_user.card_phone_no = card_phone_no
-		app_user.card_website = card_website
-		app_user.card_job_title = card_job_title
+		card.card_email = card_email
+		card.card_company = card_company
+		card.card_phone_no = card_phone_no
+		card.card_website = card_website
+		card.card_job_title = card_job_title
 
-		app_user.card_address = card_address
-		app_user.card_city = card_city
-		app_user.card_state = card_state
-		app_user.card_zip_code = card_zip_code
-		app_user.card_country = card_country
+		card.card_address = card_address
+		card.card_city = card_city
+		card.card_state = card_state
+		card.card_zip_code = card_zip_code
+		card.card_country = card_country
 
-		app_user.facebook_link = facebook_link
-		app_user.twitter_link = twitter_link
-		app_user.instagram_link = instagram_link
-		app_user.linkedin_link = linkedin_link
+		card.facebook_link = facebook_link
+		card.twitter_link = twitter_link
+		card.instagram_link = instagram_link
+		card.linkedin_link = linkedin_link
 
-		app_user.save()
+		card.save()
 
 		
-		return HttpResponseRedirect(reverse("order"))
+		return HttpResponseRedirect(reverse("order:dashboard"))
 
 
 	else:
@@ -267,12 +267,3 @@ def DashboardView(request, id):
 
 
 
-def URLProfileView(request, app_user):
-	app_user = AppUser.objects.get(user__pk=request.user.id)
-	if request.method == "POST":
-		pass
-	else:
-
-		card = CardInfo.objects.all().order_by('-id')[:1]
-		context = {"app_user": app_user, "card":card}
-		return render(request, "order/url_profile.html", context )
