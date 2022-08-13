@@ -166,6 +166,41 @@ body {
   -moz-appearance: textfield;
 }
 
+<style type="text/css">
+    
+    .alert{
+        box-shadow: 5px 5px 10px #111;
+        border: none;
+    }
+    @keyframes show-toast {
+    0%   {bottom: -100%;}
+    20%  {bottom: 50px;}
+    80%  {bottom: 50px;}
+    100% {bottom: -10%;}
+}
+
+.notification.is-toast {
+    position: fixed;
+    bottom: 100%;
+    right: 20px;
+    animation-name: show-toast;
+    animation-duration: 6s;
+}
+@media(max-width: 450px) {
+    h3{
+      font-size: 15px !important;
+    }
+  }
+</style>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="notification is-toast alert alert-{{message.tags}} text-center" role="alert" style="background: #FFE7EA; color: #00000; border-radius: 6px; font-weight: 600; z-index: 999;">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
 
     </style>
     <div class="container-fluid vh-100 d-flex flex-column px-0">
@@ -201,7 +236,7 @@ body {
                             <tbody>
                                 <tr>
                                      
-                                    <td class="d-flex align-items-center fw-600 fs-16"><img class="me-2" src="{% static 'assets/img/Ellipse%20386.png' %}" style="width: 32px;height: 32px;">ThisPass Black Card</td>
+                                    <td class="d-flex align-items-center fw-600 fs-16"><img class="me-2" src="https://github.com/Dekatron322/this__pass/blob/main/app_user/static/assets/img/Ellipse%20386.png?raw=true" style="width: 32px;height: 32px;">ThisPass Black Card</td>
                                     <td>
                                         
                                         <div class="d-flex justify-content-center align-items-center control p-0 form-group" data-quantity=""><button class="form-control prc btn d-flex justify-content-center align-items-center border-0" type="button" data-quantity-minus=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
@@ -235,22 +270,22 @@ body {
                                                     <div class="rounded-circle me-2" style="background-image: linear-gradient(#a1a1a1, #737373);width: 32px;height: 32px;"></div>ThisPass Grey Card<sup class="text-danger ms-1">NA</sup>
                                                 </td>
                                                 <td>
-                                                    <div class="d-flex justify-content-center align-items-center control p-0" data-quantity=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" data-quantity-minus=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                    <div class="d-flex justify-content-center align-items-center control p-0" data-quantity=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
                                                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                                 <path d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"></path>
-                                                            </svg></button><input class="d-flex justify-content-center align-content-center py-2 text-center bg-transparent" type="number" data-quantity-target="" value="0" step="0" min="0" max="" name=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" data-quantity-plus=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                            </svg></button><input class="d-flex justify-content-center align-content-center py-2 text-center bg-transparent" type="number" data-quantity-target="" value="0" step="0" min="0" max="0" name=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
                                                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                                 <path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"></path>
                                                             </svg></button></div>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="d-flex align-items-center fw-600 fs-16"><img class="me-2" src="{% static 'assets/img/Ellipse%20387.png' %}" style="width: 32px;height: 32px;">ThisPass White Card<sup class="text-danger ms-1">NA</sup></td>
+                                                <td class="d-flex align-items-center fw-600 fs-16"><img class="me-2" src="https://github.com/Dekatron322/this__pass/blob/main/app_user/static/assets/img/Ellipse%20387.png?raw=true" style="width: 32px;height: 32px;">ThisPass White Card<sup class="text-danger ms-1">NA</sup></td>
                                                 <td>
-                                                    <div class="d-flex justify-content-center align-items-center control p-0" data-quantity=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" data-quantity-minus=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                    <div class="d-flex justify-content-center align-items-center control p-0" data-quantity=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
                                                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                                 <path d="M400 288h-352c-17.69 0-32-14.32-32-32.01s14.31-31.99 32-31.99h352c17.69 0 32 14.3 32 31.99S417.7 288 400 288z"></path>
-                                                            </svg></button><input class="d-flex justify-content-center align-content-center py-2 text-center bg-transparent" type="number" data-quantity-target="" value="0" step="0" min="0" max="" name=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" data-quantity-plus=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
+                                                            </svg></button><input class="d-flex justify-content-center align-content-center py-2 text-center bg-transparent" type="number" data-quantity-target="" value="0" step="0" min="0" max="0" name=""><button class="btn d-flex justify-content-center align-items-center border-0" type="button" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="-32 0 512 512" width="1em" height="1em" fill="currentColor">
                                                                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                                                                 <path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"></path>
                                                             </svg></button></div>

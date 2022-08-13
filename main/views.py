@@ -33,12 +33,15 @@ def IndexView(request):
         return render(request, "main/index.html", context)
 	
 def URLProfileView(request, app_user):
-	app_user = AppUser.objects.get(user__pk=request.user.id)
-	if request.method == "POST":
-		pass
-	else:
-
-		card = CardInfo.objects.all().order_by('-id')[:1]
-		context = {"app_user": app_user, "card":card}
-		return render(request, "order/url_profile.html", context )	
-    
+    #app_user = AppUser.objects.get(user__pk=request.user.id)
+    if request.method == "POST":
+        pass
+    else:
+        card = CardInfo.objects.filter(app_user__user_name=app_user)
+        #card = CardInfo.objects.all().order_by('-id')[:1]
+        #return HttpResponse(str(card.last().app_user))
+        if card:
+            context = {"app_user": card.last().app_user, "card":[card.last()]}
+            return render(request, "order/url_profile.html", context )	
+        else:
+            return HttpResponse("Sorry, something went wrong...")

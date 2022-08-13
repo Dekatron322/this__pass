@@ -6,6 +6,40 @@
 {% block content %} 
 
 <body>
+    <style type="text/css">
+    
+    .alert{
+        box-shadow: 5px 5px 10px #111;
+        border: none;
+    }
+    @keyframes show-toast {
+    0%   {bottom: -100%;}
+    20%  {bottom: 50px;}
+    80%  {bottom: 50px;}
+    100% {bottom: -10%;}
+}
+
+.notification.is-toast {
+    position: fixed;
+    bottom: 100%;
+    right: 20px;
+    animation-name: show-toast;
+    animation-duration: 6s;
+}
+@media(max-width: 450px) {
+    h3{
+      font-size: 15px !important;
+    }
+  }
+</style>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="notification is-toast alert alert-{{message.tags}} text-center" role="alert" style="background: #FFE7EA; color: #00000; border-radius: 6px; font-weight: 600; z-index: 999;">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
     {% include 'app_user/header.html' %}
     <div class="container py-4 py-xl-5">
         <div class="row d-lg-flex justify-content-lg-center">
@@ -36,20 +70,22 @@
                         </div>
                     </div>
                     <div class="mb-3"><label class="form-label fw-600 fs-12" for="country"><strong>Country</strong><br></label><input class="form-control" type="text" placeholder="Nigeria" name="country" value="{{ app_user.country }}"></div>
-                    <div class="mb-3 mt-5"><button type="submit" class="btn btn-dark d-block w-100 fs-14" role="button" ><svg class="me-2" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_138_1133)">
-<path d="M0.700195 4.96044C0.700195 4.02344 0.974195 3.22344 1.5492 2.64844L2.5492 3.64844C1.4362 4.75744 2.4082 8.20544 5.5772 11.3774C8.7462 14.5494 12.1962 15.5204 13.3082 14.4094L14.3082 15.4094C12.4322 17.2854 8.1592 15.9544 4.5822 12.3764C2.1012 9.89444 0.700195 7.07844 0.700195 4.96044Z" fill="#009A46"/>
-<path d="M7.00636 16.2721C6.06936 16.2721 5.26936 15.9981 4.69336 15.4231L5.69336 14.4231C6.80436 15.5341 10.2524 14.5621 13.4244 11.3911C16.5964 8.22013 17.5664 4.77213 16.4554 3.66113L17.4554 2.66113C19.3324 4.53713 18.0004 8.81013 14.4224 12.3871C11.9404 14.8721 9.12436 16.2721 7.00636 16.2721Z" fill="white"/>
-<path d="M14.7533 10.9557C14.1463 9.20772 12.9063 7.33972 11.2613 5.69572C7.68428 2.11772 3.41128 0.785724 1.53528 2.66272C1.40228 2.79672 1.51728 3.12772 1.79328 3.40372C2.06928 3.67972 2.40028 3.79372 2.53328 3.66072C3.64528 2.54972 7.09328 3.52172 10.2643 6.69372C11.7643 8.19372 12.8823 9.86872 13.4213 11.4187C13.8933 12.7777 13.8473 13.8737 13.2973 14.4237C13.1633 14.5567 13.2793 14.8887 13.5543 15.1637C13.8293 15.4387 14.1613 15.5547 14.2953 15.4207C15.2563 14.4597 15.4193 12.8717 14.7533 10.9557Z" fill="#F5AFCB"/>
-<path d="M17.4533 2.66278C16.4903 1.69978 14.9043 1.53678 12.9863 2.20378C11.2393 2.80978 9.37034 4.05078 7.72634 5.69478C4.14934 9.27178 2.81734 13.5448 4.69334 15.4218C4.82734 15.5548 5.15834 15.4398 5.43434 15.1648C5.71034 14.8898 5.82534 14.5578 5.69134 14.4238C4.57734 13.3128 5.55234 9.86478 8.72434 6.69278C10.2243 5.19278 11.8993 4.07478 13.4493 3.53578C14.8083 3.06478 15.9043 3.10978 16.4553 3.65978C16.5883 3.79278 16.9203 3.67778 17.1953 3.40178C17.4703 3.12578 17.5863 2.79578 17.4533 2.66278Z" fill="#FF9B00"/>
-</g>
-<defs>
-<clipPath id="clip0_138_1133">
-<rect width="18" height="18" fill="white" transform="translate(0.5)"/>
-</clipPath>
-</defs>
-</svg>
-Pay with Flutterwave</button></div>
+                    <div class="mb-3 mt-5">
+                        
+                        
+                        
+                        
+                        
+                        
+                        </div>
+                        
+                        <div class="mb-3 mt-5"><button type="submit" class="btn btn-dark d-block w-100 fs-14" role="button" ><svg class="me-2" width="18" height="18" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <path stroke="null" style="vector-effect: non-scaling-stroke;" fill="#00c3f7" d="m16.30781,0l-15.35302,0c-0.51559,0 -0.95479,0.434 -0.95479,0.96234l0,1.71712c0,0.52834 0.4392,0.96234 0.95479,0.96234l15.35302,0c0.53468,0 0.95479,-0.434 0.97389,-0.96234l0,-1.69825c0,-0.54721 -0.4392,-0.98121 -0.97389,-0.98121zm0,9.52907l-15.35302,0c-0.24825,0 -0.49649,0.09435 -0.66835,0.28304c-0.19096,0.18869 -0.28644,0.41513 -0.28644,0.6793l0,1.71712c0,0.52834 0.4392,0.96234 0.95479,0.96234l15.35302,0c0.53468,0 0.95479,-0.41513 0.97389,-0.96234l0,-1.71712c-0.0191,-0.54721 -0.4392,-0.96234 -0.97389,-0.96234zm-6.70262,4.7551l-8.65039,0c-0.24825,0 -0.49649,0.09435 -0.66835,0.28304s-0.28644,0.41513 -0.28644,0.6793l0,1.71712c0,0.52834 0.4392,0.96234 0.95479,0.96234l8.6313,0c0.53468,0 0.95479,-0.434 0.95479,-0.94347l0,-1.71712c0.0191,-0.56608 -0.40101,-1.00008 -0.93569,-0.98121zm7.67651,-9.52907l-16.3269,0c-0.24825,0 -0.49649,0.09435 -0.66835,0.28304s-0.28644,0.41513 -0.28644,0.6793l0,1.71712c0,0.52834 0.4392,0.96234 0.95479,0.96234l16.30781,0c0.53468,0 0.95479,-0.434 0.95479,-0.96234l0,-1.71712c0.0191,-0.52834 -0.42011,-0.94347 -0.93569,-0.96234zm0,0"></path>
+ </g>
+</svg>Pay with Paystack</button></div>
                 </form>
             </div>
             <div class="col-md-6 col-lg-5 order-first order-sm-first order-md-last order-lg-last order-xl-last">
@@ -74,7 +110,7 @@ Pay with Flutterwave</button></div>
                                         None
                                       {% endif %}
                                         </td>
-                                        <td class="text-end secondary-text w-50">NGN {{ price|floatformat:2|intcomma }}</td>
+                                        <td class="text-end secondary-text w-50">NGN {% widthratio item.quantity 1 price %}.00</td>
                                     </tr>
                                 </tbody>
                             </table>

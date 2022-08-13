@@ -5,7 +5,7 @@ app_name = "card"
 
 urlpatterns = [
 
-    path("<str:app_user>/", views.MyCardView, name="card"),
+    #path("<str:app_user>/", views.MyCardView, name="card"),
     
     path("card/", views.CardView, name="card"),
 
